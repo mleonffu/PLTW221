@@ -16,30 +16,25 @@
 		
 	</style>
 	<script type = "text/javascript">
+
 	    function popOut(imageName){
 	        var image = document.getElementById(imageName);
 	            image.onmouseover = showDetailedView(imageName);
 	    }
-		function initPopout()
-		{
-			var thumb1 = document.getElementById("image1"); 
-			
-			thumb1.onmouseover = showDetailedView;
-		}
 
-		function showDetailedView()
+		function showDetailedView(imageName)
 		{
-			var im1 = document.getElementById("img1popin");
-			im1.id = "img1popout";
-			im1.innerHTML = "<br /><TABLE><TR><TH rowspan='3'><img src='aprilla/pic2thumb.jpg' width='250'><TH align='left'>Artist's Name: <TH align='left'>Aprill Aronie<TR><TH align='left'>File Name: <TH align='left'>pic1.jpg<TR></TABLE> ";
-			var popOut = document.getElementById("img1popout");
+			var im1 = document.getElementById(imageName);
+			im1.id = "popout";
+			im1.innerHTML = "<br /><TABLE><TR><TH rowspan='3'><img src='img/"+ imageName +"' width='250'><TH align='left'>Artist's Name: <TH align='left'>Aprill Aronie<TR><TH align='left'>File Name: <TH align='left'>pic1.jpg<TR></TABLE> ";
+			var popOut = document.getElementById("popout");
 			popOut.onmouseout = hideDetailedView;			
 		}
 
 		function hideDetailedView()
 		{
-			var im1 = document.getElementById("img1popout");
-			im1.id = "img1popin";
+			var im1 = document.getElementById("popout");
+			im1.id = "popin";
 			im1.innerHTML = "";
 		}
 	</script>
@@ -84,7 +79,7 @@
         </p>
         <table style="width:100%">
             <tr>
-                <td><img style="width: 500px; height: 200px;" src="/img/orange.png"></img></td>
+                <td><img onmouseover="popOut('orange.png')" style="width: 500px; height: 200px;" src="img/orange.png"></img></td>
                 <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/928/92845.ngsversion.1467254494373.adapt.710.1.jpg"></img></td>
                 <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/953/95373.ngsversion.1471316914896.adapt.676.1.jpg"></img></td>
             </tr>
