@@ -1,13 +1,55 @@
-<html><body>
 <!doctype html>
-<html lang="en">
+<html lang="en" style="background-color:#ab0011 ;">
+    <style = "text/css">
+		#img1popout {
+			z-index: 5;
+			position: absolute;
+			width: 550px;
+			height: 300px;
+			top: 50px;
+			border: 1px dashed #000099;
+			background-color: #ddddff;
+		}
+		#img1popin{
+		    
+		}
+		
+	</style>
+	<script type = "text/javascript">
+	    function popOut(imageName){
+	        var image = document.getElementById(imageName);
+	            image.onmouseover = showDetailedView(imageName);
+	    }
+		function initPopout()
+		{
+			var thumb1 = document.getElementById("image1"); 
+			
+			thumb1.onmouseover = showDetailedView;
+		}
+
+		function showDetailedView()
+		{
+			var im1 = document.getElementById("img1popin");
+			im1.id = "img1popout";
+			im1.innerHTML = "<br /><TABLE><TR><TH rowspan='3'><img src='aprilla/pic2thumb.jpg' width='250'><TH align='left'>Artist's Name: <TH align='left'>Aprill Aronie<TR><TH align='left'>File Name: <TH align='left'>pic1.jpg<TR></TABLE> ";
+			var popOut = document.getElementById("img1popout");
+			popOut.onmouseout = hideDetailedView;			
+		}
+
+		function hideDetailedView()
+		{
+			var im1 = document.getElementById("img1popout");
+			im1.id = "img1popin";
+			im1.innerHTML = "";
+		}
+	</script>
     <head>
         <meta charset="utf-8">
-        <title>JavaScript Testbed</title>
+        <title>Gallery</title>
     </head>
     <body>
         <h1>
-            JavaScript will find out the date and the browser.
+            Gallery
         </h1>
         <p>
             Structure: The interface should be organized, putting related elements together.
@@ -40,6 +82,42 @@
             <br>Draw a sketch of what your site would look like.
             <br>    http://www.zingdesign.com/wp-content/uploads/Imagine-Childcare-website-gallery-by-Zing-Design.png
         </p>
+        <table style="width:100%">
+            <tr>
+                <td><img style="width: 500px; height: 200px;" src="/img/orange.png"></img></td>
+                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/928/92845.ngsversion.1467254494373.adapt.710.1.jpg"></img></td>
+                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/953/95373.ngsversion.1471316914896.adapt.676.1.jpg"></img></td>
+            </tr>
+            <tr>
+                <td><img style="width: 500px; height: 200px;" src="http://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDq8ZU1M5oSbLltcGfxfRHZi22e9YxclIrbjT0cCKPs1loyl1DMo4wMiai8lXzVZ7W7nnXXlk5NmzM5r0_IRBXN5N4g02yll9_ZvVayck5Q43_YN2tTgPyoar1ohmYYOY2e4anFdzWmpRZKEB28zOiW356pD8ZYmInVQzVCZPQM/"></img></td>
+                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/928/92845.ngsversion.1467254494373.adapt.710.1.jpg"></img></td>
+                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/953/95373.ngsversion.1471316914896.adapt.676.1.jpg"></img></td>
+            </tr>
+            <tr>
+                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+            </tr>
+            <tr>
+                
+                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+                
+                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/920/92066.ngsversion.1467254445134.adapt.676.1.jpg"></img></td>
+                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/944/94437.ngsversion.1467402898284.adapt.676.1.jpg"></img></td>
+                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/950/95025.ngsversion.1467844121200.adapt.676.1.jpg"></img></td>
+            </tr>
+            <tr>
+                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+                
+                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/883/88359.ngsversion.1467254253308.adapt.676.1.jpg"></img></td>
+                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/763/76318.ngsversion.1467253868294.adapt.676.1.jpg"></img></td>
+                <td><img style="width: 500px; height: 200px;" src="http://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDq56jsq0--Fq7vvM6-g8G_dlrnbmTr8e-IAGh-M_iRMtiwhyVXBHcRmoHILq7TLNKI2wKxayLRDSGQsU55EU7D8WawrreWT1xJQoW2Be-If_g5NZF78_jiRqpL7G_LTwBXKEYazDwWU9mcfp7uxSopfW_qb6IQuVANndl1d9A/"></img></td>
+            </tr>
+        </table>
         
         <script type="text/javascript">
             var currentTime = new Date();
