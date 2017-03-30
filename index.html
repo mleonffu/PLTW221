@@ -1,0 +1,80 @@
+<html><body>
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Testbed</title>
+    </head>
+    <body>
+        <h1>
+            JavaScript will find out the date and the browser.
+        </h1>
+        <p>
+            Structure: The interface should be organized, putting related elements together.
+            Simple: Common tasks should be easy.
+            Visible: Information and options should be easy to find, without the distraction of unnecessary information.
+            Feedback: Users should be informed of actions, changes in state, and errors.
+            Tolerance: Mistakes should be easy to undo and reasonable input should be interpreted.
+            Reuse: Design should be consistent across components.
+            To help you get started with the design process, answer the following questions. Your instructor may ask you to record answers to these in an engineering notebook:
+          
+          
+            <br>How many pages will your site have?
+            <br> 3
+            <br>What will be the primary function of each individual page?
+            <br>   gallery, login, home
+            <br>How will your user navigate between pages?
+            <br>   buttons
+            <br>How will information about images and pieces be displayed?
+            <br>    artist, date, caption
+            <br>What information about images, pieces, and/or artists will be displayed?
+            <br>   artist, date, caption
+            <br>Where will they be displayed?
+            <br>    gallery
+            <br>How will the different parts of your site look?
+            <br>    login has login, gallery has images, and home is the front page
+            <br>By what criteria should a user be able to search for images?
+            <br>    artist, date, caption
+            <br>How will they enter those criteria?
+            <br>    search bar
+            <br>Draw a sketch of what your site would look like.
+            <br>    http://www.zingdesign.com/wp-content/uploads/Imagine-Childcare-website-gallery-by-Zing-Design.png
+        </p>
+        
+        <script type="text/javascript">
+            var currentTime = new Date();
+            var hours = currentTime.getHours();
+            var minutes = currentTime.getMinutes();
+            var seconds = currentTime.getSeconds();
+            var suffix = "AM";
+
+            if (minutes < 10){
+                minutes = "0" + minutes;
+            }
+            if (seconds < 10){ 
+                seconds = "0" + seconds;
+            }
+            if (hours >= 12) {
+                suffix = "PM";
+                hours = hours - 12;
+            }
+            if (hours == 0) {
+                hours = 12;
+            }
+
+            document.write("<b><div id='d1'>" + hours + ":" + 
+                minutes + ":" +seconds + " " + suffix + "</div></b>");
+            function hideElement(id_attribute_value) {
+			  if (document.getElementById &&
+				  document.getElementById(id_attribute_value) &&
+				  document.getElementById(id_attribute_value).style
+			  ) {
+                    document.getElementById(id_attribute_value).style.visibility = "hidden";
+			  }
+			}        
+        </script>
+        <button type="button" onclick="hideElement('d1');">hide div</button>
+    </body>
+</html>
+</body>
+</html>
