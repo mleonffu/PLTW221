@@ -1,153 +1,142 @@
 <!doctype html>
-<html lang="en" style="background-color:#ab0011 ;">
-    <style = "text/css">
-		#img1popout {
-			z-index: 5;
-			position: absolute;
-			width: 550px;
-			height: 300px;
-			top: 50px;
-			border: 1px dashed #000099;
-			background-color: #ddddff;
+<html lang="en" style="background-color:pink ;">
+	<style = "text/css">
+		#popout {
+		z-index: 5;
+		position: absolute;
+		width: 550px;
+		height: 300px;
+		top: 50px;
+		border: 1px dashed #000099;
+		background-color: #ddddff;
 		}
-		#img1popin{
-		    
+		td {
+			width: 500px;
+			height: 500px;
+			background-color: purple;
 		}
-		
+		img {
+		    max-width: 100%;
+		    max-height: 100%;
+		}
+		div {
+
+		}
+		#popin{
+		}
+		.detailedView {
+		}
+		.normalView {
+		}
 	</style>
 	<script type = "text/javascript">
-
-	    function popOut(imageName){
-	        var image = document.getElementById(imageName);
-	            image.onmouseover = showDetailedView(imageName);
-	    }
-
-		function showDetailedView(imageName)
-		{
+		function popOut(imageName){
+			var image = document.getElementById(imageName);
+			image.onmouseover = showDetailedView(imageName);
+		}
+		function showDetailedView(imageName){
 			var im1 = document.getElementById(imageName);
 			im1.id = "popout";
-			im1.innerHTML = "<br /><TABLE><TR><TH rowspan='3'><img src='img/"+ imageName +"' width='250'><TH align='left'>Artist's Name: <TH align='left'>Aprill Aronie<TR><TH align='left'>File Name: <TH align='left'>pic1.jpg<TR></TABLE> ";
+			im1.innerHTML = "<br/><TABLE><TR><TH rowspan='3'><img src='img/"+ imageName +"' width='250'><TH align='left'>Artist's Name: <TH align='left'>Aprill Aronie<TR><TH align='left'>File Name: <TH align='left'>pic1.jpg<TR></TABLE> ";
 			var popOut = document.getElementById("popout");
 			popOut.onmouseout = hideDetailedView;			
 		}
-
-		function hideDetailedView()
-		{
-			var im1 = document.getElementById("popout");
-			im1.id = "popin";
-			im1.innerHTML = "";
+		function detailedViewMouseOver(that,imageFileName,imageAuthor){
+			that.innerHTML = "<img src='img/"+ imageFileName +"'>"
+			//that.innerHTML = "<div align='center'><div><img src='img/"+ imageFileName +"'></div><div>Author: " imageAuthor "</div></div>"
 		}
+		function detailedViewMouseOut(that,imageFileName){
+			that.innerHTML = "<img src='img/"+ imageFileName +"'>"
+		}
+
 	</script>
-    <head>
-        <meta charset="utf-8">
-        <title>Gallery</title>
-    </head>
-    <body>
-        <h1>
-            Gallery
-        </h1>
-        <p>
-            Structure: The interface should be organized, putting related elements together.
-            Simple: Common tasks should be easy.
-            Visible: Information and options should be easy to find, without the distraction of unnecessary information.
-            Feedback: Users should be informed of actions, changes in state, and errors.
-            Tolerance: Mistakes should be easy to undo and reasonable input should be interpreted.
-            Reuse: Design should be consistent across components.
-            To help you get started with the design process, answer the following questions. Your instructor may ask you to record answers to these in an engineering notebook:
-          
-          
-            <br>How many pages will your site have?
-            <br> 3
-            <br>What will be the primary function of each individual page?
-            <br>   gallery, login, home
-            <br>How will your user navigate between pages?
-            <br>   buttons
-            <br>How will information about images and pieces be displayed?
-            <br>    artist, date, caption
-            <br>What information about images, pieces, and/or artists will be displayed?
-            <br>   artist, date, caption
-            <br>Where will they be displayed?
-            <br>    gallery
-            <br>How will the different parts of your site look?
-            <br>    login has login, gallery has images, and home is the front page
-            <br>By what criteria should a user be able to search for images?
-            <br>    artist, date, caption
-            <br>How will they enter those criteria?
-            <br>    search bar
-            <br>Draw a sketch of what your site would look like.
-            <br>    http://www.zingdesign.com/wp-content/uploads/Imagine-Childcare-website-gallery-by-Zing-Design.png
-        </p>
-        <table style="width:100%">
-            <tr>
-                <td><img onmouseover="popOut('orange.png')" style="width: 500px; height: 200px;" src="img/orange.png"></img></td>
-                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/928/92845.ngsversion.1467254494373.adapt.710.1.jpg"></img></td>
-                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/953/95373.ngsversion.1471316914896.adapt.676.1.jpg"></img></td>
-            </tr>
-            <tr>
-                <td><img style="width: 500px; height: 200px;" src="http://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDq8ZU1M5oSbLltcGfxfRHZi22e9YxclIrbjT0cCKPs1loyl1DMo4wMiai8lXzVZ7W7nnXXlk5NmzM5r0_IRBXN5N4g02yll9_ZvVayck5Q43_YN2tTgPyoar1ohmYYOY2e4anFdzWmpRZKEB28zOiW356pD8ZYmInVQzVCZPQM/"></img></td>
-                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/928/92845.ngsversion.1467254494373.adapt.710.1.jpg"></img></td>
-                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/953/95373.ngsversion.1471316914896.adapt.676.1.jpg"></img></td>
-            </tr>
-            <tr>
-                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
-                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
-                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
-            </tr>
-            <tr>
-                
-                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
-                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
-                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
-                
-                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/920/92066.ngsversion.1467254445134.adapt.676.1.jpg"></img></td>
-                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/944/94437.ngsversion.1467402898284.adapt.676.1.jpg"></img></td>
-                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/950/95025.ngsversion.1467844121200.adapt.676.1.jpg"></img></td>
-            </tr>
-            <tr>
-                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
-                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
-                <td align="center">Author: National Geographic<br> Date: 3/30/17</td>
-                
-                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/883/88359.ngsversion.1467254253308.adapt.676.1.jpg"></img></td>
-                <td><img style="width: 500px; height: 200px;" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/763/76318.ngsversion.1467253868294.adapt.676.1.jpg"></img></td>
-                <td><img style="width: 500px; height: 200px;" src="http://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDq56jsq0--Fq7vvM6-g8G_dlrnbmTr8e-IAGh-M_iRMtiwhyVXBHcRmoHILq7TLNKI2wKxayLRDSGQsU55EU7D8WawrreWT1xJQoW2Be-If_g5NZF78_jiRqpL7G_LTwBXKEYazDwWU9mcfp7uxSopfW_qb6IQuVANndl1d9A/"></img></td>
-            </tr>
-        </table>
-        
-        <script type="text/javascript">
-            var currentTime = new Date();
-            var hours = currentTime.getHours();
-            var minutes = currentTime.getMinutes();
-            var seconds = currentTime.getSeconds();
-            var suffix = "AM";
+	<head>
+		<meta charset="utf-8">
+		<title>Gallery</title>
+	</head>
+	<body>
+		<h1>
+			Gallery
+		</h1>
+		<table style="width:100%">
+			<tr>
+				<td>
+					<div style="background-color: red; height: 100px; width: 100px" onmouseover="detailedViewMouseOver(this,'orange.png','Anna Li')" onmouseout="detailedViewMouseOut(this,'orange.png')">
+					</div>
+				</td>
+				<td onmouseover="detailedViewMouseOver(this,'bern.png','Unknown')" onmouseout="detailedViewMouseOut(this,'bern.png')">
+					
+				</td>
+				<td>
+					<div align='center'>
+						<div>
+							<img src='img/'>
+						</div>
+						<div>
+							Author: 
+						</div>
+					</div>
+				</td>
+			</tr>
+			<tr>
+				<td><img class="normalView" src="http://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDq8ZU1M5oSbLltcGfxfRHZi22e9YxclIrbjT0cCKPs1loyl1DMo4wMiai8lXzVZ7W7nnXXlk5NmzM5r0_IRBXN5N4g02yll9_ZvVayck5Q43_YN2tTgPyoar1ohmYYOY2e4anFdzWmpRZKEB28zOiW356pD8ZYmInVQzVCZPQM/"></img></td>
+				<td><img class="normalView" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/928/92845.ngsversion.1467254494373.adapt.710.1.jpg"></img></td>
+				<td><img class="normalView" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/953/95373.ngsversion.1471316914896.adapt.676.1.jpg"></img></td>
+			</tr>
+			<tr>
+				<td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+				<td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+				<td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+			</tr>
+			<tr>
+				<td><img class="normalView" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/920/92066.ngsversion.1467254445134.adapt.676.1.jpg"></img></td>
+				<td><img class="normalView" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/944/94437.ngsversion.1467402898284.adapt.676.1.jpg"></img></td>
+				<td><img class="normalView" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/950/95025.ngsversion.1467844121200.adapt.676.1.jpg"></img></td>
+			</tr>
+			<tr>
+				<td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+				<td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+				<td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+			</tr>
+			<tr>
+				<td><img class="normalView" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/883/88359.ngsversion.1467254253308.adapt.676.1.jpg"></img></td>
+				<td><img class="normalView" src="http://www.nationalgeographic.com/content/dam/photography/photos/000/763/76318.ngsversion.1467253868294.adapt.676.1.jpg"></img></td>
+				<td><img class="normalView" src="http://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDq56jsq0--Fq7vvM6-g8G_dlrnbmTr8e-IAGh-M_iRMtiwhyVXBHcRmoHILq7TLNKI2wKxayLRDSGQsU55EU7D8WawrreWT1xJQoW2Be-If_g5NZF78_jiRqpL7G_LTwBXKEYazDwWU9mcfp7uxSopfW_qb6IQuVANndl1d9A/"></img></td>
+			</tr>
+			<tr>
+				<td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+				<td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+				<td align="center">Author: National Geographic<br> Date: 3/30/17</td>
+			</tr>
+		</table>
+		<script type="text/javascript">
+			var currentTime = new Date();
+			var hours = currentTime.getHours();
+			var minutes = currentTime.getMinutes();
+			var seconds = currentTime.getSeconds();
+			var suffix = "AM";
 
-            if (minutes < 10){
-                minutes = "0" + minutes;
-            }
-            if (seconds < 10){ 
-                seconds = "0" + seconds;
-            }
-            if (hours >= 12) {
-                suffix = "PM";
-                hours = hours - 12;
-            }
-            if (hours == 0) {
-                hours = 12;
-            }
-
-            document.write("<b><div id='d1'>" + hours + ":" + 
-                minutes + ":" +seconds + " " + suffix + "</div></b>");
-            function hideElement(id_attribute_value) {
-			  if (document.getElementById &&
-				  document.getElementById(id_attribute_value) &&
-				  document.getElementById(id_attribute_value).style
-			  ) {
-                    document.getElementById(id_attribute_value).style.visibility = "hidden";
-			  }
+			if (minutes < 10){
+				minutes = "0" + minutes;
+			}
+			if (seconds < 10){ 
+				seconds = "0" + seconds;
+			}
+			if (hours >= 12) {
+				suffix = "PM";
+				hours = hours - 12;
+			}
+			if (hours == 0) {
+				hours = 12;
+			}
+			document.write("<b><div id='d1'>" + hours + ":" + 
+			minutes + ":" +seconds + " " + suffix + "</div></b>");
+			function hideElement(id_attribute_value) {
+				if (document.getElementById && document.getElementById(id_attribute_value) && document.getElementById(id_attribute_value).style){
+					document.getElementById(id_attribute_value).style.visibility = "hidden";
+				}
 			}        
-        </script>
-        <button type="button" onclick="hideElement('d1');">hide div</button>
-    </body>
-</html>
-</body>
+		</script>
+		<button type="button" onclick="hideElement('d1');">hide div</button>
+	</body>
 </html>
